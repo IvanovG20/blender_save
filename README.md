@@ -6,10 +6,9 @@
 Склонируйте репозиторий:
 ```
 git@github.com:IvanovG20/blender_save.git
-
 ```
 
-С включенным Docker пропишите команду:
+С включенным Docker пропишите команду в терминале:
 ```
 docker compose -f docker-compose.production.yml
 ```
