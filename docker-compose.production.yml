@@ -1,0 +1,23 @@
+volumes:
+  scene_static:
+
+services:
+
+  backend:
+
+    container_name: save_scene-backend
+    image: tagiil7/save_scene:latest
+    env_file: ./.env
+    volumes:
+      - scene_static:/app/static_backend/
+
+
+  nginx:
+    image: nginx:alpine-slim
+    ports:
+      - "8888:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - scene_static:/var/html/static/
+
+
